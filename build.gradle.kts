@@ -129,17 +129,6 @@ publishing {
     }
 }
 
-allprojects {
-    publishing {
-        repositories {
-            maven("https://repo.papermc.io/repository/maven-snapshots/") {
-                name = "paperSnapshots"
-                credentials(PasswordCredentials::class)
-            }
-        }
-    }
-}
-
 tasks.register("printMinecraftVersion") {
     doLast {
         println(providers.gradleProperty("mcVersion").get().trim())
